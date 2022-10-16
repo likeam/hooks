@@ -21,10 +21,12 @@ const Search = () => {
             setResults(data.query.search);
             console.log(`${setResults.key}`)
         };
-
-        if(term){
-            search();
-        };
+        setTimeout(() => {
+            if(term){
+                search();
+            }
+        }, 500);
+        
 
     }, [term]);
 
