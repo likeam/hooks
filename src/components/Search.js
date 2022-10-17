@@ -19,15 +19,16 @@ const Search = () => {
                 },
             });
             setResults(data.query.search);
-            console.log(`${setResults.key}`)
+            
         };
-        setTimeout(() => {
+
+       
+       const timeoutI = setTimeout(() => {
             if(term){
                 search();
             }
         }, 500);
-        
-
+    
     }, [term]);
 
     const renderedResult = results.map((result) => {
