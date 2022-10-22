@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Dropdown = ({options, selected, onSelectedChange}) => {
+
+    const [open, setOpen] = useState(false);
 
     const renderedOptions = options.map((option) =>{
 
@@ -21,10 +23,11 @@ const Dropdown = ({options, selected, onSelectedChange}) => {
         <div className="ui form">
             <div className="field">
                 <label className='label'>Select a Color</label>
-                <div className="ui selection dropdwon visibla active">
+                <div onClick={() => setOpen(!open)} 
+                className= {`ui selection dropdwon ${ open ? 'visibla active': ''}`}>
                     <i className="dropdwon icon"></i>
                     <div className="text">{selected.label}</div>
-                    <div className="menu visible transition">{renderedOptions}</div>
+                    <div className={`menu ${ open ? 'visibla transition': ''}`}>{renderedOptions}</div>
                 </div>
             </div>
         </div>
