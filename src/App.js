@@ -33,23 +33,28 @@ const options = [
     label: 'The Color Blue',
     value: 'blue'
   }
-]
+];
 
 const App = () => {
 
   const [selected, setSelected] = useState(options[0]);
+  const [showDropdwon, setShowDropdwon] = useState(true);
 
   return (
     <div>
+      <button onClick={() => setShowDropdwon(!showDropdwon)}>Toggle Dropdwon</button>
+    { showDropdwon ? (
       <Dropdown  
         options={options}
         onSelectedChange={setSelected}
         selected={selected}
       />
+      ) : null
+    }
     </div>
   )
 }
 
-export default App
+export default App;
 
 
