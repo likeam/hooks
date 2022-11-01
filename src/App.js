@@ -35,7 +35,7 @@ const options = [
   },
   {
     label: 'The Color Blue',
-    value: 'blue'
+    value: 'yellow'
   }
 ];
 
